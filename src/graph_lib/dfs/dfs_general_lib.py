@@ -1,12 +1,12 @@
 __all__ = ['dfs', 'dfs_order']
 
 def dfs(graph, start, visited=None):
+    if not graph:
+        raise ValueError('Graph is empty!')
+    if start not in graph:
+        raise KeyError(f'Vertex {start} not in graph!')
     if visited == None:
         visited = set()
-        if not graph:
-            raise ValueError('Graph is empty!')
-        if start not in graph:
-            raise KeyError(f'Vertex {start} not in graph!')
     visited.add(start)
     for neighbour in graph.get(start, []):
         if neighbour not in visited:
