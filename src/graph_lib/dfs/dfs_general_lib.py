@@ -13,12 +13,14 @@ def dfs(graph, start, visited=None):
             dfs(graph, neighbour, visited)
     return visited
 
-def dfs_order(graph, start):
+def dfs_order(graph, start, visited=None):
     if not graph:
         raise ValueError('Graph is empty!')
     if start not in graph:
         raise KeyError(f'Vertex {start} not in graph!')
-    visited = {start}
+    if visited == None:
+        visited = set()
+    visited.add(start)
     stack = [start]
     order = []
     while stack:
