@@ -100,12 +100,12 @@ Returns the set of all nodes reachable from `start`. Accepts an optional `visite
 ```python
 bfs_order(graph, start, visited=None) → list
 ```
-Returns nodes in BFS visit order. Also accepts an optional shared `visited` set.
+Returns nodes in BFS visit order. Accepts an optional shared `visited` set.
 
 ```python
 bfs_count(graph, start, visited=None) → int
 ```
-Returns the count of nodes reachable from `start`.
+Returns the count of nodes reachable from `start`. Accepts an optional shared `visited` set.
 
 ```python
 bfs_distances(graph, start) → dict
@@ -194,9 +194,9 @@ dfs(graph, start, visited=None) → set
 Recursive DFS. Returns the set of all visited nodes. Accepts an optional shared `visited` set.
 
 ```python
-dfs_order(graph, start) → list
+dfs_order(graph, start, visited=None) → list
 ```
-Iterative DFS using an explicit stack. Returns nodes in DFS visit order. Does **not** accept a shared `visited` set — always starts fresh.
+Iterative DFS using an explicit stack. Returns nodes in DFS visit order. Accepts an optional shared `visited` set.
 
 ---
 
